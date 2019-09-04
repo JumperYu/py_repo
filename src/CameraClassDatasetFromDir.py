@@ -1,16 +1,6 @@
 import os
 
-import pandas as pd
-import numpy as np
-from PIL import Image
-
-import torch
-import torch.nn as nn
-from torch.autograd import Variable
-from torchvision import transforms
 from torch.utils.data.dataset import Dataset  # For custom datasets
-
-from cnn_model import MnistCNNModel
 
 
 class CameraClassDatasetFromDir(Dataset):
