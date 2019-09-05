@@ -27,8 +27,9 @@ class CameraClassDatasetFromDir(Dataset):
         self.data_len = len(self.image_arr)
 
     def __getitem__(self, index):
-        data = (self.label_arr[index], self.image_arr[index])
-        return data
+        label = self.label_arr[index]
+        image = self.image_arr[index]
+        return label, image
 
     def __len__(self):
         return len(self.image_arr)
@@ -36,6 +37,7 @@ class CameraClassDatasetFromDir(Dataset):
 
 if __name__ == "__main__":
     dataset = CameraClassDatasetFromDir('C:/work/dev/camera_class_win10/', '../data/manifest.csv')
-    data_loader = DataLoader(dataset, batch_size=16, shuffle=False)
-    for i, data in enumerate(data_loader):
-        print(data)
+    # data_loader = DataLoader(dataset, batch_size=16, shuffle=False)
+    # for i, data in enumerate(data_loader):
+    #     print(data)
+    print(len(dataset))
